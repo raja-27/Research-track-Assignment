@@ -1,11 +1,7 @@
 #! /usr/bin/env python
 
 # import ros stuff
-"""
-    This node works when the service "/ask_user_interface" is called as state0.
-        -state 1:
-            asking the request target on command line and checking if the request is feasible (among [[-4,-3],[-4,2],[-4,7],[5,-7],[5,-3],[5,1]]) or not
-"""
+
 
 import rospy
 from std_srvs.srv import *
