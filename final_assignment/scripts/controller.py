@@ -1,22 +1,5 @@
 #! /usr/bin/env python
-
 # import ros stuff
-"""
-This node is managing each states as following below:
-state0 - This node calls for /random_target in order to get random target position among [(-4,-3),(-4,2),(-4,7),(5,-7),(5,-3),(5,1)], and publishes the target position for /move_base. 
-         After that, the robot starts to move for target.(this behaivor doens't depend on this node)
-         When the robot arrives at the target position, it switches to state1.
-
-state1 -  When the robot arrives the target,this node calls for /ask_user_interface. and publishes the target position /ask_user_interface gives for /move_base. 
-          After that, the robot starts to move for target.(this behaivor doens't depend on this node)
-          When the robot arrives at the target position, it switches to state2.
-
-state2 -  When the robot arrives the target, the node calls for /wall_follower. 
-          After the robot run around the map, it switches to state3.
-
-state3 -  When the robot arrives the target user_interface gave, the robot just stops.
-"""
-
 import rospy
 import time
 from geometry_msgs.msg import Point
